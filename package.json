@@ -1,11 +1,14 @@
 {
   "name": "@rnowotniak/genpass",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Password generator in JavaScript",
   "main": "genpass.js",
   "dependencies": {
+    "argparse": "^2.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jsdoc": "^3.6.6"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
