@@ -1,0 +1,26 @@
+{
+  "name": "@rnowotniak/genpass",
+  "version": "0.0.1",
+  "description": "Password generator in JavaScript",
+  "main": "genpass.js",
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnowotniak/genpass.js.git"
+  },
+  "keywords": [
+    "password",
+    "generator"
+  ],
+  "author": "Robert Nowotniak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rnowotniak/genpass.js/issues"
+  },
+  "homepage": "https://github.com/rnowotniak/genpass.js#readme"
+}
