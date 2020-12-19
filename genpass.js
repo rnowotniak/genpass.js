@@ -1,7 +1,11 @@
 #!/usr/bin/env node
-//
-// Robert Nowotniak <rnowotniak@gmail.com> 2020
-//
+/**
+ * Password generator in JavaScript
+ * 
+ * @author Robert Nowotniak <rnowotniak@gmail.com> 2020
+ * @link   https://www.npmjs.com/package/@rnowotniak/genpass
+ * @file   This is the main program file
+ */
 'use strict';
 
 // Load modules
@@ -18,9 +22,10 @@ const DEFAULT_NUMBERS = false
 const SYMBOLS_TABLE = '~`!@#$%^&*()_+-={}|[]\\;\':",./<>?'
 
 /**
- * Generate a random password per settings given in the parameters.
+ * Generates a random password per settings given in the parameters.
+ *
  * By default 'ab...z' set is used to randomly choose from.
-
+ *
  * @param  {Number}  settings.length   The length of password
  * @param  {Boolean} settings.upper    Whether to use upper case chars additionally
  * @param  {Boolean} settings.symbols  Whether to use symbols additionally

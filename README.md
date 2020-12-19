@@ -46,3 +46,22 @@ Length 20 characters, add upper case, numbers and symbols:
 
     $ ./genpass.js -l 20 -uns
     G7FIq${-5IKp:7`Ex5vI
+
+## API documentation
+
+<a name="generatePassword"></a>
+
+## generatePassword() ⇒ <code>String</code>
+Generates a random password per settings given in the parameters.
+
+By default 'ab...z' set is used to randomly choose from.
+
+**Kind**: global function  
+**Returns**: <code>String</code> - The generated password  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| settings.length | <code>Number</code> | The length of password |
+| settings.upper | <code>Boolean</code> | Whether to use upper case chars additionally |
+| settings.symbols | <code>Boolean</code> | Whether to use symbols additionally |
+| settings.numbers | <code>Boolean</code> | Whether to use numbers additionally |
