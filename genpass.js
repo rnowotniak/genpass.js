@@ -33,14 +33,14 @@ const SYMBOLS_TABLE = '~`!@#$%^&*()_+-={}|[]\\;\':",./<>?'
  *
  * @return {String}                    The generated password
  */
-function generatePassword(settings = {}) {
-	const { length=4, upper=false, symbols=false, numbers=false } = settings
-	if (typeof settings == "number") {
-		length = settings
-	}
-	else if (typeof settings != "object") {
+function generatePassword(settings = {length:DEFAULT_LENGTH}) {
+	if (false == ['number', 'object'].includes(typeof settings)) {
 		throw new Error('Function requires an Object argument or length number');
 	}
+	const { upper=DEFAULT_UPPER,
+		symbols=DEFAULT_SYMBOLS,
+		numbers=DEFAULT_NUMBERS } = settings
+	const length = (typeof settings == "number") ? settings : settings.length;
 
 	const aCode = 'a'.charCodeAt(0)
 	const zCode = 'z'.charCodeAt(0)

@@ -17,4 +17,14 @@ test('The parameter "length" allows to specify the password length', () => {
 });
 
 
+test('Single number parameter (instead of hash) is taken as requested length', () => {
+	let lengths = [2, 7, 12, 20]
+	for (const length of lengths) {
+		let password = genpass(length);
+		expect(password.length).toBe(length);
+	}
+});
+
+
+
 
