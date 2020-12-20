@@ -1,5 +1,5 @@
 
-const { genpass } = require('./genpass')
+const genpass = require('./genpass')
 
 test('by default returns a non-empty password', () => {
 	let password = genpass();

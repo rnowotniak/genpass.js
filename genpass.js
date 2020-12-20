@@ -34,10 +34,13 @@ const SYMBOLS_TABLE = '~`!@#$%^&*()_+-={}|[]\\;\':",./<>?'
  * @return {String}                    The generated password
  */
 function generatePassword(settings = {}) {
-	if (typeof settings != 'object') {
-		throw new Error('Function requires an Object argument');
-	}
 	const { length=4, upper=false, symbols=false, numbers=false } = settings
+	if (typeof settings == "number") {
+		length = settings
+	}
+	else if (typeof settings != "object") {
+		throw new Error('Function requires an Object argument or length number');
+	}
 
 	const aCode = 'a'.charCodeAt(0)
 	const zCode = 'z'.charCodeAt(0)
@@ -87,6 +90,6 @@ if (require.main === module) {
 
 }
 else {
-	module.exports.genpass = generatePassword;
+	module.exports = generatePassword;
 }
 
