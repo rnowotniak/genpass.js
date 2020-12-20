@@ -11,7 +11,8 @@
     "jsdoc-to-markdown": "^6.0.1"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "./genpass.js"
   },
   "repository": {
     "type": "git",
