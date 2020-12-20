@@ -62,19 +62,27 @@ function generatePassword(settings = {}) {
 	return result
 }
 
+if (require.main === module) {
 
-const parser = new ArgumentParser({description:"Password generator in JavaScript"});
-parser.add_argument('--length', '-l', { type:'int', help:'Password length'})
-parser.add_argument('--symbols', '-s', { action:'store_true', help:'Include symbols'} )
-parser.add_argument('--upper', '-u', { action:'store_true', help:'Include upper case letters'} )
-parser.add_argument('--numbers', '-n', { action:'store_true', help:'Include numbers'} )
-let args = parser.parse_args()
+	// Parse arguments
+	const parser = new ArgumentParser({description:"Password generator in JavaScript"});
+	parser.add_argument('--length', '-l', { type:'int', help:'Password length'});
+	parser.add_argument('--symbols', '-s', { action:'store_true', help:'Include symbols'} );
+	parser.add_argument('--upper', '-u', { action:'store_true', help:'Include upper case letters'} );
+	parser.add_argument('--numbers', '-n', { action:'store_true', help:'Include numbers'} );
 
-let length = args.length ? args.length : DEFAULT_LENGTH
-let symbols = args.symbols ? args.symbols : DEFAULT_SYMBOLS
-let upper = args.upper ? args.upper : DEFAULT_UPPER
-let numbers = args.numbers ? args.numbers : DEFAULT_NUMBERS
+	let args = parser.parse_args();
+	let length = args.length ? args.length : DEFAULT_LENGTH;
+	let symbols = args.symbols ? args.symbols : DEFAULT_SYMBOLS;
+	let upper = args.upper ? args.upper : DEFAULT_UPPER;
+	let numbers = args.numbers ? args.numbers : DEFAULT_NUMBERS;
 
-let password = generatePassword({length, symbols, upper, numbers})
-console.log(password)
+	// Generate and print the password.
+	let password = generatePassword({length, symbols, upper, numbers});
+	console.log(password);
+
+}
+else {
+	module.exports.genpass = generatePassword;
+}
 
