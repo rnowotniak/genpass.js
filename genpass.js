@@ -34,6 +34,9 @@ const SYMBOLS_TABLE = '~`!@#$%^&*()_+-={}|[]\\;\':",./<>?'
  * @return {String}                    The generated password
  */
 function generatePassword(settings = {}) {
+	if (typeof settings != 'object') {
+		throw new Error('Function requires an Object argument');
+	}
 	const { length=4, upper=false, symbols=false, numbers=false } = settings
 
 	const aCode = 'a'.charCodeAt(0)
@@ -61,6 +64,7 @@ function generatePassword(settings = {}) {
 	
 	return result
 }
+
 
 if (require.main === module) {
 
